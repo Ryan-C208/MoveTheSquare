@@ -15,7 +15,7 @@ public class GameController {
 			} else {
 				moveX = -Game.MOVE_DIST;
 			}
-			if (dy > 0) {
+			if (dy > 0 ) {
 				moveY = Game.MOVE_DIST;
 			} else {
 				moveY = -Game.MOVE_DIST;
@@ -27,7 +27,18 @@ public class GameController {
 	}
 
 	public void moveSquare(Game model, Square square) {
-		square.setX(square.getX() + model.getSquareDx());
-		square.setY(square.getY() + model.getSquareDy());
+		if(square.getX() + square.getWidth()+ model.getSquareDx() <= model.getWidth() 
+		& square.getX() - square.getWidth()+ model.getSquareDx() >= 0){
+			square.setX(square.getX() + model.getSquareDx());
+
+		}else {
+			square.setX(square.getX());
+		}
+		if(square.getY() + square.getHeight() +model.getSquareDy() <= model.getHeight()
+		&square.getY() - square.getHeight() + model.getSquareDy() >=0) {
+			square.setY(square.getY() + model.getSquareDy());
+		}else {
+			square.setY(square.getY());
+		}
 	}
 }
