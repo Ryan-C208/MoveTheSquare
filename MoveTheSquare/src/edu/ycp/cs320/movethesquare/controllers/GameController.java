@@ -12,37 +12,41 @@ public class GameController {
 			double moveX = 0, moveY = 0;
 			
 			if (dx > 0) {
-				if((mouseX + Game.MOVE_DIST) > 610.0)
+				if ((square.getX() + Game.MOVE_DIST) > 500.0)
 				{
-					moveX = 0;
+					moveX = 0.0;
+				}
+				else {
+					moveX = Game.MOVE_DIST;
+				}
+			}
+			else {
+				if((square.getX() - Game.MOVE_DIST) < 10.0)
+				{
+					moveX = 0.0;
 				}
 				else
 				{
-					moveX = Game.MOVE_DIST;
-				}
-			} else {
-				if((mouseX - Game.MOVE_DIST) < 10.0)
-				{
-					moveX = 0;
-				}
-				else {
 					moveX = -Game.MOVE_DIST;
 				}
 			}
 			if (dy > 0) {
-				if((mouseY + Game.MOVE_DIST) > 410.0)
+				if((square.getY() + Game.MOVE_DIST) > 400.0)
 				{
-					moveY = 0;
+					moveY = 0.0;
 				}
-				else {
+				else 
+				{
 					moveY = Game.MOVE_DIST;
 				}
-			} else {
-				if((mouseY - Game.MOVE_DIST) < 10.0)
+			} 
+			else {
+				if((square.getY() - Game.MOVE_DIST) < 10)
 				{
-					moveY = 0;
+					moveY = 0.0;
 				}
-				else {
+				else 
+				{
 					moveY = -Game.MOVE_DIST;
 				}
 			}
