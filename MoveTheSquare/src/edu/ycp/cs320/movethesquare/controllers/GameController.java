@@ -17,7 +17,7 @@ public class GameController {
 			else {
 				moveX = -Game.MOVE_DIST;
 			}
-			if (dy > 0) {
+			if (dy > 0 ) {
 				moveY = Game.MOVE_DIST;
 			} 
 			else {
